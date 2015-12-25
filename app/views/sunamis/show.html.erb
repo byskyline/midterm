@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>標題:</strong>
+  <%= @sunami.title %>
+</p>
+
+<p>
+  <strong>內文:</strong>
+  <%= @sunami.box %>
+</p>
+
+<p>
+  <strong>時間:</strong>
+  <%= @sunami.time %>
+</p>
+
+
+<%= link_to 'Edit', edit_sunami_path(@sunami) %> |
+<%= link_to 'Back', sunamis_path %>

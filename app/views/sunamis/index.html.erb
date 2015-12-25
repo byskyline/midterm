@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>海嘯救援</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>標題</td>
+      <td>內文</td>
+      <td>時間</td>
+      <td>其他</td>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sunamis.each do |sunami| %>
+      <tr>
+        <td><%= sunami.title %></td>
+        <td><%= sunami.box %></td>
+        <td><%= sunami.time %></td>
+
+        <td><%= link_to 'Show', sunami %></td>
+        <td><%= link_to 'Edit', edit_sunami_path(sunami) %></td>
+        <td><%= link_to 'Destroy', sunami, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'attendees', sunami_attendees_path(sunami) %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sunami', new_sunami_path %>
+
+
+<%= paginate @sunamis %>

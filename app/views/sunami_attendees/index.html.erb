@@ -1,0 +1,14 @@
+<ul>
+<% @attendees.each do |attendee| %>
+  <li>
+    <%= attendee.name %>
+    <%= link_to 'show', sunami_attendee_path(@sunami, attendee) %>
+    <%= link_to 'edit', edit_sunami_attendee_path(@sunami, attendee) %>
+    <%= link_to 'destroy', sunami_attendee_path(@sunami, attendee),
+                              :method => :delete %>
+  </li>
+<% end %>
+
+</ul>
+
+    <%= link_to 'new attendee', new_sunami_attendee_path(@sunami) %>
